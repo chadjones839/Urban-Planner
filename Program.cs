@@ -6,6 +6,9 @@ namespace Planner
     {
         static void Main(string[] args)
         {
+            City flipadelphia = new City("flipadelphia", "Dr. Puddles", "2019");
+            City nashville = new City("Nashville", "Robby Tommy", "1890");
+
             Building abstergo = new Building("Abstergo Inc.");
             abstergo.Construct("Ongo Gablogian", "Durl Winston");
             abstergo.Stories = 120;
@@ -24,9 +27,14 @@ namespace Planner
             ominent.Width = 200.5;
             ominent.Depth = 235.5;
 
-            abstergo.ListBuildings();
-            spacersChoice.ListBuildings();
-            ominent.ListBuildings();
+
+            flipadelphia.AddBuilding(ominent);
+            flipadelphia.AddBuilding(spacersChoice);
+            nashville.AddBuilding(abstergo);
+            Console.WriteLine(flipadelphia.CityName);
+            flipadelphia.BuildingsList();
+            Console.WriteLine(nashville.CityName);
+            nashville.BuildingsList();
         }
     }
 }

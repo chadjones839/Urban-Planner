@@ -17,8 +17,12 @@ namespace Planner
       get { return Width * Depth * (3 * Stories); }
     }
 
-
     public Building(string Address) => _address = Address;
+
+    public string GetAddress()
+    {
+      return _address;
+    }
 
     public void Construct(string Designer, string Owner) 
     {
